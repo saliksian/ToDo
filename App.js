@@ -12,12 +12,16 @@ import {
 } from 'react-native';
 import Task from './src/components/Task';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { Provider } from 'react-redux'
+import { Provider, useDispatch, useSelector } from 'react-redux'
 import { Store } from './src/config/Store';
+
+import { addTask } from "./src/store/TodoSlice";
 
 const App = () => {
   const [task, setTask] = useState();
   const [taskItems, setTaskItems] = useState([]);
+
+  
 
   const handleAddTask = () => {
     Keyboard.dismiss();
